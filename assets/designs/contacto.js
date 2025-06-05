@@ -1,34 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Inicializa EmailJS con tu public key
-  emailjs.init("6atX1sYqf2gCnelAV"); // <- Reemplaza con tu public key real si cambia
+  emailjs.init("6atX1sYqf2gCnelAV"); // Reemplaza por tu PUBLIC KEY real
 
-  const form = document.querySelector("#form");
+  const form = document.getElementById("form");
   const langBtn = document.getElementById("lang-btn");
   const langMenu = document.getElementById("lang-menu");
   const hamburger = document.getElementById("hamburger");
   const navbar = document.getElementById("navbar");
 
-  // Envío del formulario
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const name = document.querySelector("#name").value.trim();
-    const email = document.querySelector("#email").value.trim();
-    const message = document.querySelector("#message").value.trim();
-
-    if (!name || !email.includes("@") || !message) {
-      alert("Por favor, completa todos los campos correctamente.");
-      return;
-    }
-
-    const templateParams = {
-      user_name: name,
-      user_email: email,
-      message: message,
-    };
+  // Enviar formulario
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
     emailjs
-      .send("default_service", "template_s1t5y3o", templateParams)
+      .sendForm("default_service", "template_s1t5y3o", this)
       .then(() => {
         alert("Formulario enviado con éxito. ¡Gracias por contactarnos!");
         form.reset();
@@ -45,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navbar.classList.toggle("show");
   });
 
-  // Cerrar menú al hacer clic fuera
+  // Cierre del menú al hacer clic fuera
   document.addEventListener("click", (e) => {
     if (!hamburger.contains(e.target) && !navbar.contains(e.target)) {
       hamburger.classList.remove("active");
@@ -53,10 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Selector de idioma
+  // Menú de idioma
   if (langBtn && langMenu) {
     langBtn.addEventListener("click", (e) => {
-      e.stopPropagation(); // evita que se cierre inmediatamente
+      e.stopPropagation();
       langMenu.style.display = langMenu.style.display === "flex" ? "none" : "flex";
     });
 

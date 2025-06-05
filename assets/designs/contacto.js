@@ -1,12 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-  emailjs.init("public_XXXXXXX"); // ← actualiza con tu clave real
+  // Inicializa EmailJS con tu clave pública
+  emailjs.init("public_TUCLAVEAQUÍ"); // ← Reemplaza con tu clave real
 
   const form = document.getElementById("form");
+
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      // Obtén los valores del formulario
+      const formData = {
+        user_name: form.user_name.value,
+        user_email: form.user_email.value,
+        message: form.message.value,
+      };
+
+      // Enviar con send (más confiable que sendForm)
       emailjs
-        .sendForm("default_service", "template_s1t5y3o", this)
+        .send("default_service", "template_s1t5y3o", formData)
         .then(() => {
           alert("Formulario enviado con éxito. ¡Gracias por contactarnos!");
           form.reset();
@@ -18,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Botón de menú hamburguesa
   const hamburger = document.getElementById("hamburger");
   const navbar = document.getElementById("navbar");
 
@@ -35,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Selector de idioma
   const langBtn = document.getElementById("lang-btn");
   const langMenu = document.getElementById("lang-menu");
 

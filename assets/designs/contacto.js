@@ -1,43 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
-  emailjs.init("6atX1sYqf2gCnelAV"); // Reemplaza por tu PUBLIC KEY real
+  emailjs.init("public_XXXXXXX"); // ← actualiza con tu clave real
 
   const form = document.getElementById("form");
-  const langBtn = document.getElementById("lang-btn");
-  const langMenu = document.getElementById("lang-menu");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      emailjs
+        .sendForm("default_service", "template_s1t5y3o", this)
+        .then(() => {
+          alert("Formulario enviado con éxito. ¡Gracias por contactarnos!");
+          form.reset();
+        })
+        .catch((error) => {
+          console.error("Error al enviar:", error);
+          alert("Error al enviar el formulario. Intenta más tarde.");
+        });
+    });
+  }
+
   const hamburger = document.getElementById("hamburger");
   const navbar = document.getElementById("navbar");
 
-  // Enviar formulario
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  if (hamburger && navbar) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navbar.classList.toggle("show");
+    });
 
-    emailjs
-      .sendForm("default_service", "template_s1t5y3o", this)
-      .then(() => {
-        alert("Formulario enviado con éxito. ¡Gracias por contactarnos!");
-        form.reset();
-      })
-      .catch((error) => {
-        console.error("Error al enviar:", error);
-        alert("Error al enviar el formulario. Intenta más tarde.");
-      });
-  });
+    document.addEventListener("click", (e) => {
+      if (!hamburger.contains(e.target) && !navbar.contains(e.target)) {
+        hamburger.classList.remove("active");
+        navbar.classList.remove("show");
+      }
+    });
+  }
 
-  // Menú hamburguesa
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navbar.classList.toggle("show");
-  });
+  const langBtn = document.getElementById("lang-btn");
+  const langMenu = document.getElementById("lang-menu");
 
-  // Cierre del menú al hacer clic fuera
-  document.addEventListener("click", (e) => {
-    if (!hamburger.contains(e.target) && !navbar.contains(e.target)) {
-      hamburger.classList.remove("active");
-      navbar.classList.remove("show");
-    }
-  });
-
-  // Menú de idioma
   if (langBtn && langMenu) {
     langBtn.addEventListener("click", (e) => {
       e.stopPropagation();

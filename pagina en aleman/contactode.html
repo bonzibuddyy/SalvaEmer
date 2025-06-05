@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/designs/contacto.css" />
+  <link rel="icon" href="../assets/img/SalvaElmelogo.png" type="image/x-icon" />
+  <title>SalvaEmer - Kontakt</title>
+</head>
+<body>
+
+  <!-- Hamburger-Menü -->
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <!-- Navigationsmenü -->
+  <nav id="navbar" class="navbar">
+    <a href="indexde.html">Startseite</a>
+    <a href="quienesomosde.html">Über Uns</a>
+    <a href="serviciode.html">Dienstleistungen</a>
+    <a href="casos-exito-de.html">Erfolgsgeschichten</a>
+    <a href="noticiasde.html">Nachrichten</a>
+    <a href="contactode.html">Kontakt</a>
+  </nav>
+
+  <!-- Sprachwahl -->
+  <div class="lang-selector">
+    <button id="lang-btn" class="lang-toggle">🌐 Sprache</button>
+    <div id="lang-menu" class="lang-menu">
+      <a href="../contacto.html" class="lang-option">
+        <img src="../assets/img/españa.jpg" alt="Spanisch" /> ES
+      </a>
+      <a href="../pagina en ingles/contactoen.html" class="lang-option">
+        <img src="../assets/img/inglaterra.png" alt="Englisch" /> EN
+      </a>
+      <a href="../pagina en aleman/contactode.html" class="lang-option">
+        <img src="../assets/img/alemania.png" alt="Deutsch" /> DE
+      </a>
+      <a href="../pagina en frances/contactofr.html" class="lang-option">
+        <img src="../assets/img/francia.jpg" alt="Französisch" /> FR
+      </a>
+      <a href="../pagina en noruego/contactonor.html" class="lang-option">
+        <img src="../assets/img/Noruego.png" alt="Norwegisch" /> NO
+      </a>
+      <a href="../pagina en islandes/contactois.html" class="lang-option">
+        <img src="../assets/img/Islandia.png" alt="Isländisch" /> IS
+      </a>
+    </div>
+  </div>
+
+  <!-- Kontaktformular -->
+  <main class="contact-form fade-in">
+    <h2>Kontaktieren Sie uns</h2>
+    <form id="form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" required />
+
+      <label for="message">Nachricht:</label>
+      <textarea id="message" required></textarea>
+
+      <button type="submit">Senden</button>
+    </form>
+    <p class="info-contacto">
+      📞 922 09 90 43 &nbsp; | &nbsp; 📧 direccion.use@gmail.com<br>
+      📸 Instagram: @salva_emer &nbsp;|&nbsp; Facebook: @Salva-Emer Canarias &nbsp;|&nbsp; TikTok: @salvaemer112
+    </p>
+  </main>
+
+  <!-- Karte -->
+  <div class="map-container fade-in">
+    <h2>Unser Standort</h2>
+    <iframe
+      src="https://www.google.com/maps?q=28.1235,-15.4363&z=14&output=embed"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Institutionelle Logos -->
+  <div class="logos-row fade-in">
+    <img src="../assets/img/SalvaElmelogo.png" alt="SalvaEmer" />
+    <img src="../assets/img/GobiernoCanarias.png" alt="Regierung der Kanarischen Inseln" />
+    <img src="../assets/img/anav.png" alt="ANAV" />
+    <img src="../assets/img/LaOnu.png" alt="Vereinte Nationen" />
+  </div>
+
+  <footer>
+    <h5>©2025 von Salva-Emer Canarias. Erstellt von Santiago Guerra Forestier und Francisco Javier García Bordón.<br> FP Dual Praktikumsstudenten von IES Ana Luisa Benítez und IES Fernando Sagaseta.</h5>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="../assets/designs/contacto.js"></script>
+</body>
+</html>

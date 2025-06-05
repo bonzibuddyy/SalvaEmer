@@ -1,0 +1,314 @@
+/* ------------------ RESET & FONDO DINÁMICO ------------------ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #6a00f4, #ff0080, #00eaff, #8e2de2, #4a00e0);  background-size: 300% 300%; 
+  animation: epicBackground 8s ease infinite;
+  color: #ffffff;
+  padding-top: 60px;
+}
+
+@keyframes epicBackground {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1100;
+}
+.hamburger .bar {
+  height: 4px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navbar general */
+.navbar {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(45deg, #ff0080, #8e2de2);
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.navbar a:hover {
+  background: linear-gradient(45deg, #8e2de2, #4a00e0);
+  transform: scale(1.05);
+}
+
+/* ------------------ SECCIONES ------------------ */
+.introduccion {
+  text-align: center;
+  padding: 40px 20px 0;
+}
+
+.introduccion h1 {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.noticia {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.noticia-item {
+  margin: 20px auto;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  width: 90%;
+  text-align: left;
+}
+
+.noticia-item h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.noticia-item p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.noticia-item a {
+  color: linear-gradient(45deg, #8e2de2, #4a00e0);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.noticia-item a:hover {
+  text-decoration: underline;
+}
+
+/* ------------------ LOGOS ------------------ */
+.logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px auto;
+  padding: 10px;
+  max-width: 900px;
+}
+.logo-row img {
+  width: 70px;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, filter 0.3s;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+.logo-row img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* ------------------ FOOTER ------------------ */
+footer {
+  background-color: #ff0080;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+  font-size: 16px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* ------------------ SELECTOR DE IDIOMA ------------------ */
+.lang-selector {
+  position: fixed;
+  top: 15px;
+  left: 60px;
+  z-index: 1002;
+}
+
+.lang-toggle {
+  background-color: #ff0080;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.lang-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 110%;
+  background-color: #ff0080;
+  padding: 8px 10px;
+  border-radius: 8px;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+.lang-option:hover {
+  transform: scale(1.1);
+}
+
+.lang-option img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Animación de aparición */
+.oculto {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.aparecer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Botón volver arriba visible */
+.btn-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 14px;
+  font-size: 20px;
+  background-color: #ff0080;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+
+.btn-top.visible {
+  display: block;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+   .hamburger {
+    display: flex;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.95);
+    padding: 20px;
+    display: none;
+    z-index: 1000;
+    border-top: 2px solid red;
+    transform-origin: top;
+  }
+
+  .navbar.show {
+    display: flex;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .navbar a {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #ffffff33;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: scaleY(0); }
+    to { opacity: 1; transform: scaleY(1); }
+  }
+
+  .noticia {
+    padding: 20px 10px;
+  }
+
+  .logo-row img,
+  .logo, .logo2, .logo3, .logo4 {
+    width: 60px;
+  }
+
+  .lang-selector {
+    left: auto;
+    right: 15px;
+  }
+
+  .lang-menu {
+    top: 110%;
+    left: auto;
+    right: 0;
+    flex-direction: column;
+    gap: 6px;
+    width: max-content;
+  }
+}
+  

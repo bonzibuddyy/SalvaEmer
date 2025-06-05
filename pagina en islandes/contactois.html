@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/designs/contacto.css" />
+  <link rel="icon" href="../assets/img/SalvaElmelogo.png" type="image/x-icon" />
+  <title>SalvaEmer - Hafa samband</title>
+</head>
+<body>
+
+  <!-- Hamborgaratakki -->
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+  <!-- Flakkvalmynd -->
+  <nav id="navbar" class="navbar">
+      <a href="indexis.html">Heim</a>
+      <a href="quienessomosis.html">Um okkur</a>
+      <a href="serviciosis.html">Þjónusta</a>
+      <a href="casos-exito-is.html" class="active">Velgengnissögur</a>
+      <a href="noticiasis.html">Fréttir</a>
+      <a href="contactois.html">Hafðu samband</a>
+  </nav>
+
+  <!-- Tungumálaval -->
+  <div class="lang-selector">
+    <button id="lang-btn" class="lang-toggle">🌐 Tungumál</button>
+    <div id="lang-menu" class="lang-menu">
+      <a href="../contacto.html" class="lang-option">
+        <img src="../assets/img/españa.jpg" alt="Spænska" /> ES
+      </a>
+      <a href="../pagina en ingles/contactoen.html" class="lang-option">
+        <img src="../assets/img/inglaterra.png" alt="Enska" /> EN
+      </a>
+      <a href="../pagina en aleman/contactode.html" class="lang-option">
+        <img src="../assets/img/alemania.png" alt="Þýska" /> DE
+      </a>
+      <a href="../pagina en frances/contactofr.html" class="lang-option">
+        <img src="../assets/img/francia.jpg" alt="Franska" /> FR
+      </a>
+      <a href="../pagina en noruego/contactonor.html" class="lang-option">
+        <img src="../assets/img/Noruego.png" alt="Norska" /> NO
+      </a>
+      <a href="../pagina en islandes/contactois.html" class="lang-option">
+        <img src="../assets/img/Islandia.png" alt="Íslenska" /> IS
+      </a>
+    </div>
+  </div>
+
+  <!-- Samskiptaform -->
+  <main class="contact-form fade-in">
+    <h2>Hafðu samband við okkur</h2>
+    <form id="form">
+      <label for="name">Nafn:</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Netfang:</label>
+      <input type="email" id="email" required />
+
+      <label for="message">Skilaboð:</label>
+      <textarea id="message" required></textarea>
+
+      <button type="submit">Senda</button>
+    </form>
+    <p class="info-contacto">
+      📞 922 09 90 43 &nbsp; | &nbsp; 📧 direccion.use@gmail.com<br>
+      📸 Instagram: @salva_emer &nbsp;|&nbsp; Facebook: @Salva-Emer Canarias &nbsp;|&nbsp; TikTok: @salvaemer112
+    </p>
+  </main>
+
+  <!-- Kort -->
+  <div class="map-container fade-in">
+    <h2>Staðsetning okkar</h2>
+    <iframe
+      src="https://www.google.com/maps?q=28.1235,-15.4363&z=14&output=embed"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Opinber merki -->
+  <div class="logos-row fade-in">
+    <img src="../assets/img/SalvaElmelogo.png" alt="SalvaEmer" />
+    <img src="../assets/img/GobiernoCanarias.png" alt="Ríkisstjórn Kanaríeyja" />
+    <img src="../assets/img/anav.png" alt="ANAV" />
+    <img src="../assets/img/LaOnu.png" alt="Sameinuðu þjóðirnar" />
+  </div>
+
+  <footer>
+    <h5>©2025 af Salva-Emer Canarias. Búið til af Santiago Guerra Forestier og Francisco Javier García Bordón.<br> FP Dual starfsnemar frá IES Ana Luisa Benítez og IES Fernando Sagaseta.</h5>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="../assets/designs/contacto.js"></script>
+</body>
+</html>

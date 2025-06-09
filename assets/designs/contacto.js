@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Inicializa EmailJS con tu clave pública
-  emailjs.init("public_TUCLAVEAQUÍ"); // ← Reemplaza con tu clave real
+  emailjs.init("6atX1sYqf2gCnelAV"); // ← Reemplaza con tu clave real
 
   const form = document.getElementById("form");
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Enviar con send (más confiable que sendForm)
       emailjs
-        .send("default_service", "template_s1t5y3o", formData)
+        .send("service_3m44st5", "template_zet7ace", formData)
         .then(() => {
           alert("Formulario enviado con éxito. ¡Gracias por contactarnos!");
           form.reset();
